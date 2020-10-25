@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--导入其他资源配置文件-->
+    <import resource="bean-lookup.xml"/>
+
+
+    <!--这种依赖注入属于硬编码方式，依赖手动注入，如果我们想往里面继续添加的话，需要修改配置，于是有一只自动注入 -->
+    <bean id="studentRepository" class="com.wf.repository.StudentRepository">
+        <property name="studentList">
+            <util:list>
+                <ref bean="fafa"/>
+                <ref bean="qiuqiu"/>
+            </util:list>
+        </property>
+
+
+    </bean>
+
+
+    <bean id="studentRepositoryAuto" class="com.wf.repository.StudentRepository" autowire="byType">
+
+    </bean>
+
+
+</beans>

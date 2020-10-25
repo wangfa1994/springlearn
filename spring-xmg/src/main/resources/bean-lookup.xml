@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--依赖查找 -根据名称去查找 - 实时查找-->
+    <bean class="com.wf.model.Student" id="fafa">
+        <property name="id" value="1"/>
+        <property name="name" value="fafa"/>
+    </bean>
+
+    <bean class="com.wf.model.Student" id="qiuqiu" >
+        <property name="id" value="1"/>
+        <property name="name" value="qiuqiu"/>
+    </bean>
+
+
+    <!--依赖查找 -根据名称去查找 - 延迟查找-->
+    <bean class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean" id="objectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="wangfa"></property>
+    </bean>
+
+
+
+    <!--依赖查找 -通过注解区分-->
+    <bean  id = "banzhang" class="com.wf.model.SuperStudent" primary="true" parent="fafa">
+        <property name="level" value="banzhang"/>
+    </bean>
+
+
+
+</beans>
