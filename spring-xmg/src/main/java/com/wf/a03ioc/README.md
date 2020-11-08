@@ -40,8 +40,10 @@
 • 容器內建依赖---内建的一些依赖，但是获取不到的
 
 springIOC 依赖的的来源包括三部分 
-自定义bean，我们所熟知的我们的业务bean，容器内建的bean，spring容器内部定义的暴露出来的bean，我们可以获取的，但是不需要我们定义的，
-spring容器内建的bean，这些bean也是spring容器的一部分，但是我们无法获取，只能是内部使用。
+1、自定义bean，我们所熟知的我们的业务bean，
+2、容器内建的暴露bean，spring容器内部定义的暴露出来的bean，我们可以获取的，但是不需要我们定义的，
+3、容器内建的内置bean(非bean)，这些bean也是spring容器的一部分，但是我们无法获取，只能是内部使用。
+
 
 
 四、spring配置的元信息有哪些
@@ -76,5 +78,12 @@ ApplicationContext 除了 IoC 容器角色，还有提供：
 七、如何选择spring ioc容器  BeanFactory 和ApplicationContext
 • BeanFactory 是 Spring 底层 IoC 容器
 • ApplicationContext 是具备应用特性的 BeanFactory 超集
+
+八、
+1、什么是ioc容器
+2、beanFactory和factoryBean有什么区别
+3、spring的启动有哪些过程
+
+
 
     
