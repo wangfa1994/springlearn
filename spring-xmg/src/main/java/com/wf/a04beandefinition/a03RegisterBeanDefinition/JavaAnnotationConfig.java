@@ -1,4 +1,4 @@
-package com.wf.a04beandefinition;
+package com.wf.a04beandefinition.a03RegisterBeanDefinition;
 
 import com.wf.model.Student;
 import org.springframework.context.annotation.Bean;

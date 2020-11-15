@@ -7,7 +7,7 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 /**
- * @Desc :
+ * @Desc : 创建beanDefinition
  * @Author : Mr.WangF
  * @Date: 2020/11/8 15:19
  */

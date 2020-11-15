@@ -35,7 +35,33 @@ BeanDefinition 是 Spring Framework 中定义 Bean 的配置元信息接口 包�
     1、xml方式配置元信息
     2、java注解配置元信息(通过配置信息进行操作)
     3、java api配置元信息(通过容器的相关类进行操作)
+    
+七、实例化bean 
+    1、通过构造器（配置元信息：XML、Java 注解和 Java API ）
+    2、通过静态工厂方法（配置元信息：XML 和 Java API ）
+    3、通过实例工厂方法（配置元信息：XML和 Java API ）
+    4、通过 FactoryBean（配置元信息：XML、Java 注解和 Java API ）
+    5、通过 ServiceLoaderFactoryBean（配置元信息：XML、Java 注解和 Java API ）
+    6、通过 AutowireCapableBeanFactory#createBean(java.lang.Class, int, boolean)
+    7、通过 BeanDefinitionRegistry#registerBeanDefinition(String,BeanDefinition)
 
+八、初始化bean
+    1、通过@PostContruct注解初始化bean
+    2、实现 InitializingBean 接口的 afterPropertiesSet() 方法
+    3、自定义初始化方法
+        • XML 配置：<bean init-method=”init” ... />
+        • Java 注解：@Bean(initMethod=”init”)
+        • Java API：AbstractBeanDefinition#setInitMethodName(String)
+        
+九、延迟初始化Bean
+    延迟初始化bean，会导致bean的初始化后置到按需加载中
+    • XML 配置：<bean lazy-init=”true” ... />
+    • Java 注解：@Lazy(true)
+    
+十、
+    如何注册一个 Spring Bean(通过 BeanDefinition 和外部单体对象来注册)
+    什么是 Spring BeanDefinition
+    Spring 容器是怎样管理注册 Bean
 
 
     

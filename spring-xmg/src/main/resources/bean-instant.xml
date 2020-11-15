@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+    <!--通过xml配置-->
+    <bean id="peopleXml" class="com.wf.a04beandefinition.a04InstantBean.People">
+        <property name="name" value="peopleXml"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <!--通过静态工厂方法-->
+    <bean id="peopleStaticMethod" class="com.wf.a04beandefinition.a04InstantBean.People"
+          factory-method="newPeople"/>
+
+    <!--通过实例工厂方法-->
+    <bean id="createBeanFactory" class="com.wf.a04beandefinition.a04InstantBean.CreateBeanFactory"></bean>
+    <bean id="peopleFactoryBean" factory-bean="createBeanFactory" factory-method="createPeople"></bean>
+
+
+    <!--通过FactoryBean(用来生成特殊的bean)-->
+    <bean id="peopleFactoryBeanImplement" class="com.wf.a04beandefinition.a04InstantBean.UserFactoryBean"/>
+
+
+    <!-- 特殊方式:通过serviceLoadFactoryBean进行加载，获取的到对应的ServiceLoad(SPI机制)-->
+    <bean id="serviceLoadFactoryBeans" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+        <property name="serviceType" value="com.wf.a04beandefinition.a04InstantBean.spi.Services"/>
+    </bean>
+
+</beans>
